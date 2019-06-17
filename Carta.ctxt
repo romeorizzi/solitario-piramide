@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Carta
+comment0.text=\r\n\ La\ classe\ Carta\ costruisce\ gli\ oggetti\ "Carta"\ che\ hanno\ un\ numero\ e\ un\ seme.\ \r\n\ E'\ presente\ un\ metodo\ get()\ che\ restituisce\ il\ numero\ della\ carta.\r\n\ E'\ presente\ un\ metodo\ stampa()\ che\ stampa\ il\ numero\ della\ carta.\r\n\ E'\ presente\ un\ metodo\ elimina()\ che\ sostituisce\ il\ numero\ della\ carta\ presente\ con\ uno\ 0.\r\n\ \r\n\ @author\ Paccini\ Letizia,\ Rizzotto\ Sofia,\ Signoretto\ Alessandro,\ Ambrosi\ Alberto\r\n\ @version\ 14_05_2019\ \r\n
+comment1.params=n\ s
+comment1.target=Carta(int,\ char)
+comment1.text=\r\n\ Costruttore\ dell'oggetto\ Carta\r\n\ \r\n\ @param\ \ \ \ \ \ n\ numero\ della\ Carta,\ s\ seme\ della\ Carta\r\n\ @return\ \ \ \ \ (implicito)\ oggetto\ Carta\ istanziata\r\n
+comment2.params=
+comment2.target=int\ getNumero()
+comment2.text=\r\n\ Metodo\ getNumero()\r\n\ \r\n\ @return\ \ \ \ \ numero\ della\ Carta\r\n
+comment3.params=
+comment3.target=char\ getSeme()
+comment3.text=\r\n\ Metodo\ getSeme()\r\n\ \r\n\ @return\ \ \ \ \ seme\ della\ carta\r\n
+comment4.params=n
+comment4.target=void\ setNumero(int)
+comment4.text=\r\n\ Metodo\ setNumero()\r\n\ \r\n\ Modifica\ il\ numero\ della\ Carta\r\n\ @param\ n\ intero\ nuovo\ numero\ della\ Carta\ (1<\=n<\=13)\r\n
+comment5.params=s
+comment5.target=void\ setSeme(char)
+comment5.text=\r\n\ Metodo\ setSeme()\r\n\ \r\n\ Modifica\ il\ seme\ della\ Carta\r\n\ @param\ s\ nuovo\ seme\ della\ Carta\ (s\ appartiene\ a\ {\u2665,\u2666,\u2663,\u2660})\r\n
+comment6.params=
+comment6.target=java.lang.String\ toStringCarta()
+comment6.text=\r\n\ Metodo\ toStringCarta()\r\n\ \r\n\ @return\ \ s\ stringa\ di\ lunghezza\ 2\ contenente\ numero\ e\ seme\ della\ Carta\r\n
+comment7.params=
+comment7.target=void\ eliminaCarta()
+comment7.text=\r\n\ Metodo\ eliminaCarta()\r\n\ \r\n\ @return\ \ sostituisce\ il\ numero\ della\ carta\ con\ 0\r\n
+numComments=8

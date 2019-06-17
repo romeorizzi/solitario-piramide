@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Piramide
+comment0.text=\r\n\ La\ classe\ Piramide\ costruisce\ un\ oggetto\ Piramide\ composto\ da\ una\ matrice\ di\ 28\ Carte.\r\n\ \r\n\ @author\ Paccini\ Letizia,\ Rizzotto\ Sofia,\ Signoretto\ Alessandro,\ Ambrosi\ Alberto\r\n\ @version\ 14_05_2019\r\n
+comment1.params=m
+comment1.target=Piramide(Mazzo)
+comment1.text=\r\n\ Costruttore\ dell'oggetto\ Piramide\r\n\ \r\n\ @param\ m\ Mazzo\r\n\ @return\ (implicito)\ oggetto\ Piramide\ istanziato\r\n
+comment2.params=i\ j
+comment2.target=boolean\ cartaLibera(int,\ int)
+comment2.text=\r\n\ Metodo\ cartaLibera()\r\n\ Stabilisce\ se\ una\ carta\ \u00E8\ giocabile\r\n\ i\ \=\ righe,\ j\ \=\ colonne\r\n\ \r\n\ @param\ \ i,\ j\ interi,\ 0<\=i<\=6,\ 0<\=j<\=6\r\n\ @return\ t\=true\ se\ la\ carta\ \u00E8\ libera,\ t\=false\ altrimenti\r\n
+comment3.params=
+comment3.target=Carta[][]\ getMat()
+comment3.text=\r\n\ Metodo\ getMat()\r\n\ \r\n\ @return\ \ \ \ mat\r\n
+comment4.params=
+comment4.target=java.lang.String[][]\ toStringPiramide()
+comment4.text=\r\n\ Metodo\ toStringPiramide()\r\n\ Crea\ una\ matrice\ res\ di\ stringhe\ contenenti\ carte\ e\ spazi\ per\ poter\ stampare\ la\ piramide\r\n\ Sotto\ ogni\ riga\ di\ carte\ c'\u00E8\ una\ riga\ di\ spazi\r\n\ In\ ogni\ posizione\ della\ matrice\ res\ \u00E8\ presente\ una\ stringa\ di\ lunghezza\ due\ che\ contiene\ un\ numero\ e\ un\ seme\ oppure\ due\ spazi\ bianchi\r\n\ \r\n\ @return\ \ \ \ res\ matrice\ di\ stringhe\r\n
+numComments=5

@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Pozzo
+comment0.text=\r\n\ La\ classe\ Pozzo\ costruisce\ un\ oggetto\ Pozzo\ composto\ da\ un\ array\ di\ 52\ Carte.\r\n\ \r\n\ @author\ Paccini\ Letizia,\ Rizzotto\ Sofia,\ Signoretto\ Alessandro,\ Ambrosi\ Alberto\r\n\ @version\ 14_05_2019\ \r\n
+comment1.params=
+comment1.target=Pozzo()
+comment1.text=\r\n\ Costruttore\ degli\ oggetti\ Pozzo\r\n\ \r\n\ @return\ (implicito)\ oggetto\ Pozzo\ istanziato\r\n
+comment2.params=
+comment2.target=int\ getOccupate()
+comment2.text=\r\n\ Metodo\ getOccupate()\r\n\ Restituisce\ il\ valore\ dell'intero\ occupate\r\n\ \r\n\ @return\ occupate\r\n
+comment3.params=
+comment3.target=Carta\ getTop()
+comment3.text=\r\n\ Metodo\ getTop()\r\n\ Restituisce\ la\ carta\ top\r\n\ \r\n\ @return\ top\r\n
+comment4.params=
+comment4.target=Carta[]\ getPozzo()
+comment4.text=\r\n\ Metodo\ getPozzo()\r\n\ Restituisce\ l'array\ con\ le\ carte\ del\ Pozzo\r\n\ \r\n\ @return\ poz\r\n
+comment5.params=
+comment5.target=void\ setTop()
+comment5.text=\r\n\ Metodo\ setTop()\r\n\ Modifica\ il\ top\ del\ Pozzo\r\n
+comment6.params=m
+comment6.target=void\ add(Mazzo)
+comment6.text=\r\n\ Metodo\ add()\r\n\ Aggiunge\ nel\ pozzo\ la\ carta\ cima\ del\ mazzo\r\n\r\n\ @param\ \ \ m\ Mazzo\ \r\n
+numComments=7
