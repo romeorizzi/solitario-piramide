@@ -38,5 +38,5 @@ comment8.target=java.lang.String[][]\ eliminaCartePiramide(int[][])
 comment8.text=\r\n\ Metodo\ eliminaCartePiramide()\r\n\ \r\n\ Elimina\ le\ carte\ evidenziate\ nella\ piramide\ e\ le\ sottolineature\r\n\ \r\n\ @param\ posizioni\ matrice\ 2x2\r\n\ @return\ res\ matrice\ di\ stringhe\ senza\ le\ carte\ giocate\r\n
 comment9.params=
 comment9.target=void\ stampaMazzoPozzo()
-comment9.text=\r\n\ Metodo\ stampaMazzoPozzo()\r\n\ \r\n\ Stampa\ la\ prima\ carta\ del\ mazzo\ e\ del\ pozzo\r\n\ \r\n\ @param\ posizioni\ matrice\ 2x2\r\n\ @return\ res\ matrice\ di\ stringhe\ senza\ le\ carte\ giocate\r\n
+comment9.text=\r\n\ Metodo\ stampaMazzoPozzo()\r\n\ \r\n\ Stampa\ la\ prima\ carta\ del\ mazzo\ e\ del\ pozzo\r\n\ \r\n\ @return\ res\ matrice\ di\ stringhe\ senza\ le\ carte\ giocate\r\n
 numComments=14

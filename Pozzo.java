@@ -57,17 +57,12 @@ public class Pozzo
      * Metodo setTop()
      * Modifica il top del Pozzo
      */
-    public void setTop(){
-        if(occupate>0){ // se l'array non è vuoto
-            if (occupate==1){
-                occupate--;
-                top =new Carta(0,' ');
-            }
-            else{
-                while (top.getNumero()==0){ // se il numero del top è 0
-                    occupate--;
-                    top = poz[occupate]; // top
-                }
+    public void setTop(){ 
+        if (occupate>0 && top.getNumero()==0){ // se l'array non è vuoto e se il numero del top è 0
+            occupate--;
+            top = poz[occupate-1]; // top
+            if(occupate==0){ //se avevo solo una carta
+                top = new Carta(0,' ');
             }
         }
     }

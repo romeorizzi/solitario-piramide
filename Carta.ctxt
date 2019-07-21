@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Carta
-comment0.text=\r\n\ La\ classe\ Carta\ costruisce\ gli\ oggetti\ "Carta"\ che\ hanno\ un\ numero\ e\ un\ seme.\ \r\n\ E'\ presente\ un\ metodo\ get()\ che\ restituisce\ il\ numero\ della\ carta.\r\n\ E'\ presente\ un\ metodo\ stampa()\ che\ stampa\ il\ numero\ della\ carta.\r\n\ E'\ presente\ un\ metodo\ elimina()\ che\ sostituisce\ il\ numero\ della\ carta\ presente\ con\ uno\ 0.\r\n\ \r\n\ @author\ Paccini\ Letizia,\ Rizzotto\ Sofia,\ Signoretto\ Alessandro,\ Ambrosi\ Alberto\r\n\ @version\ 14_05_2019\ \r\n
+comment0.text=\r\n\ La\ classe\ Carta\ costruisce\ gli\ oggetti\ "Carta"\ che\ hanno\ come\ variabili\ d'istanza\ un\ numero\ e\ un\ seme.\ \r\n\ \r\n\ @author\ Paccini\ Letizia,\ Rizzotto\ Sofia,\ Signoretto\ Alessandro,\ Ambrosi\ Alberto\r\n\ @version\ 14_05_2019\ \r\n
 comment1.params=n\ s
 comment1.target=Carta(int,\ char)
 comment1.text=\r\n\ Costruttore\ dell'oggetto\ Carta\r\n\ \r\n\ @param\ \ \ \ \ \ n\ numero\ della\ Carta,\ s\ seme\ della\ Carta\r\n\ @return\ \ \ \ \ (implicito)\ oggetto\ Carta\ istanziata\r\n

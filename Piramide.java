@@ -53,6 +53,16 @@ public class Piramide
         return t;
     }
     
+    // /**
+     // * Metodo ()
+     // * Crea un mazzo ordinato composto da 52 carte, divise per i 4 semi ♥ ♦ ♣ ♠
+     // * 
+     // * @return    m array che contiene tutte le carte del mazzo
+     // */
+    // public void sostituisciSpazio(int i, int j){
+        // x[i][j] = null;
+    // }
+    
     /**
      * Metodo getMat()
      * 

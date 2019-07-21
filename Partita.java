@@ -67,7 +67,7 @@ public class Partita
         int j=0; // colonna della carta fissata
         boolean trovata = false; // false se non trovo la combinazione
         posizioni[0][0] = -1; 
-        while (!trovata && i>0){ // finchè non ho trovato la combinazione e non sono arrivato alla fine della piramide
+        while (!trovata && i>=0){ // finchè non ho trovato la combinazione e non sono arrivato alla fine della piramide
             if (p.cartaLibera(i,j)){
                 if (p.getMat()[i][j].getNumero()==13) { // se la carta è un k mi restituisce 2 carte uguali
                     posizioni[0][0] = i;
@@ -77,7 +77,7 @@ public class Partita
                     trovata = true;
                 }
                 else {
-                    for(int k=i; k>0; k--){ // k scorre le righe dal basso verso l'alto
+                    for(int k=i; k>=0; k--){ // k scorre le righe dal basso verso l'alto
                         for(int h=0; h<=i; h++){ // h scorre le colonne da sinistra a destra
                             if ( !trovata && (p.cartaLibera(k,h)) && (faTredici(p.getMat()[i][j],p.getMat()[k][h])) ){
                                 posizioni[0][0] = i;
@@ -209,11 +209,9 @@ public class Partita
      * 
      * Stampa la prima carta del mazzo e del pozzo
      * 
-     * @param posizioni matrice 2x2
      * @return res matrice di stringhe senza le carte giocate
      */
     public void stampaMazzoPozzo(){
-        Carta c = poz.getTop();
         String sm; // stringa per il mazzo
         String sp; // stringa per il pozzo
         switch (m.getCima().getNumero()){
@@ -265,20 +263,18 @@ public class Partita
         System.out.println("Giri del mazzo fatti: "+girimazzofatti+"\n");
         String[][] res = p.toStringPiramide(); // res matrice di stringhe sulla quale farò la mossa
         int dove=1; // dove indica se ho trovato una combinazione nel mazzo, nel pozzo o nella piramide
+        if(girimazzofatti>0 & m.getInizioMazzo()==0){ // se ho appena girato il mazzo stampo la piramide prima di effettuare la nuova mossa
+            stampaPiramide(res);
+            stampaMazzoPozzo();
+            System.out.println("\n------------------------------");
+            in.nextLine();
+        }
         if (posizioni[0][0]==-1){ // se non ho trovato la combinazione nella piramide cerco nel pozzo
             posizioni = this.combMazzoPozzo(poz.getTop()); 
             if (posizioni[0][0] == -1){ // se non ho trovato la combinazione nel pozzo cerco nel mazzo
                 posizioni = this.combMazzoPozzo(m.getCima());
                 if (posizioni[0][0] == -1){ // se non l'ho ancora trovata
-                    if(m.getInizioMazzo()<52){ // se non sono all'ultima carta del mazzo, sposto una carta dal mazzo al pozzo
-                        poz.add(m);
-                    }
-                    else{ // altrimenti il pozzo diventa il mazzo
-                        m.trasformaPozzoInMazzo(poz);
-                        girimazzofatti++;
-                        System.out.println("Hai finito il mazzo \n");
-                        poz = new Pozzo(); // devo azzerare il pozzo
-                    }
+                    poz.add(m);
                     dove = -1; // cioè non ho trovato la combinazione
                 }
                 else{ 
@@ -295,6 +291,10 @@ public class Partita
             res = this.evidenziaPiramide(posizioni);
         }
         
+        if(girimazzofatti>0 & (m.getInizioMazzo()==0 | m.getInizioMazzo()==1)){ 
+           //serve solo per la grafica (la condizione è uguale a quella sopra con l'aggiunta del caso in cui come prima mossa giro la carta del mazzo)
+           System.out.println("Giri del mazzo fatti: "+girimazzofatti+"\n");
+        }
         stampaPiramide(res);
         stampaMazzoPozzo(); 
         res = eliminaCartePiramide(posizioni); // tolgo le carte giocate
@@ -308,54 +308,58 @@ public class Partita
             evidenziaMazzo();
             m.getCima().eliminaCarta(); // modifico la prima carta del mazzo
             m.setCima(); // se sono all'ultima carta setCima non aumenta inizioMazzo
-            if(m.getInizioMazzo()==51){ // ricomincio il mazzo
-                girimazzofatti++;
-                if(girimazzofatti<3){
-                    m.trasformaPozzoInMazzo(poz);
-                    System.out.println("Hai finito il mazzo \n");
-                    poz = new Pozzo();
-                }
-            }
         }
         System.out.println("\n------------------------------");
-        System.out.println("\n");
-        if (m.getCima().getNumero()==0){ // cima è 0 se ho finito le carte giocabili nel mazzo
-            m.trasformaPozzoInMazzo(poz);
-            girimazzofatti++;
-            System.out.println("Hai finito il mazzo \n");
-            poz = new Pozzo();
-        }
-        if (dove!=-1){ // se non ho trovato la combinazione stampo la piramide senza modifiche
+        if (dove!=-1){ // se ho trovato la combinazione (riferito al caso generale) stampo la nuova piramide senza le carte appena giocate
             in.nextLine();
+            System.out.println("Giri del mazzo fatti: "+girimazzofatti+"\n");
             stampaPiramide(res);
             stampaMazzoPozzo();
             System.out.println("\n------------------------------");
+        }
+        if (m.getCima().getNumero()==0){ // cima è 0 se ho finito le carte giocabili nel mazzo
+            boolean trovato = false;
+            int[][] posizioni2 = this.combPiramide(); //prima di girare il mazzo cerco se ci sono altre combinazioni
+            if (posizioni2[0][0]==-1){ // se non ho trovato la combinazione nella piramide cerco nel pozzo
+                posizioni2 = this.combMazzoPozzo(poz.getTop()); 
+                if (posizioni2[0][0] != -1){ // se l'ho trovata nel pozzo
+                    trovato = true;
+                }//se non l'ho trovata neanche nel pozzo "trovato" rimane false
+            }
+            else trovato = true; //caso in cui la combinazione è stata trovata nella piramide
+            if(!trovato){ //se non ho trovato combinazioni allora giro il mazzo e il pozzo
+                m.trasformaPozzoInMazzo(poz);
+                girimazzofatti++;
+                System.out.println("Hai finito il mazzo \n");
+                poz = new Pozzo();
+            }
         }
         in.nextLine();
     }
     
     public static void main (String[]Args){
-        
-        boolean termina=false;
-        
-        while (!termina){
+        boolean termina = false;
+        while(!termina){
             Partita game = new Partita();
+            System.out.println("Giri del mazzo fatti: "+game.girimazzofatti+"\n");
             game.stampaPiramide(game.p.toStringPiramide()); // stampo la piramide
             game.stampaMazzoPozzo(); // stampa il mazzo e il pozzo
-            in.nextLine();
+            System.out.println("\n------------------------------");
+            in.nextLine();  
+            
             while(!game.isOver()){
                 game.faiMossa();
             }
+            
             if (game.p.getMat()[0][0].getNumero()==0){
                 System.out.println ("CIAO HAI VINTO LA PARTITA :-)");
             }
             else {
-                System.out.println ("CIAO HAI PERSO LA PARTITA :-( \n");
+                System.out.println ("CIAO HAI PERSO LA PARTITA :-(");
             }
             
-            System.out.println ("Vuoi fare una nuova partita? [s/n]");
+            System.out.println("Vuoi fare una nuova partita? [y/n]");
             termina="n".equals(in.next("\\w"));
-        
         }
     }
 }
